@@ -47,17 +47,12 @@ function Counter(props: PropsType) {
     //     setIsRunning(!isRunning)
     // }
 
-    const handleSubmit = useCallback(() => {
-        console.log('useCallback' + delay);
-        
-    }, [delay])
 
     return (
         <div>
             <h1>{count}</h1>
             <Input type="text" value={delay} onChange={(e) => setDelay(Number(e.target.value))} />
             <Button onClick={() => setIsRunning(!isRunning)}>{isRunning ? '暂停': '开始'}</Button>
-            <Button onClick={handleSubmit}>callback log</Button>
         </div>
     )
 }
